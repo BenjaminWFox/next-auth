@@ -1,6 +1,6 @@
 ---
-id: azure-ad
-title: Azure Active Directory
+id: azure-ad-b2c
+title: Azure Active Directory B2C
 ---
 
 ## Documentation

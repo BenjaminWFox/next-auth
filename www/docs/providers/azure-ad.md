@@ -34,10 +34,10 @@ import Providers from 'next-auth/providers';
 ...
 providers: [
   Providers.AzureAD({
+    tenantId: process.env.AZURE_AD_TENANT_ID,
     clientId: process.env.AZURE_AD_CLIENT_ID,
     clientSecret: process.env.AZURE_AD_CLIENT_SECRET,
     scope: 'offline_access User.Read',
-    tenantId: process.env.AZURE_AD_TENANT_ID,
   }),
 ]
 ...
