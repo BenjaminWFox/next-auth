@@ -22,22 +22,22 @@ https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-regis
 In `.env.local` create the follwing entries:
 
 ```
-AZURE_CLIENT_ID=<copy Application (client) ID here> 
-AZURE_CLIENT_SECRET=<copy generated secret value here>
-AZURE_TENANT_ID=<copy the tenant id here>
+AZURE_AD_CLIENT_ID=<copy Application (client) ID here> 
+AZURE_AD_CLIENT_SECRET=<copy generated secret value here>
+AZURE_AD_TENANT_ID=<copy the tenant id here>
 ```
 
-In `pages/api/auth/[...nextauth].js` find or add the AZURE entries:
+In `pages/api/auth/[...nextauth].js` find or add the AZURE_AD entries:
   
 ```js
 import Providers from 'next-auth/providers';
 ...
 providers: [
   Providers.AzureAD({
-    clientId: process.env.AZURE_CLIENT_ID,
-    clientSecret: process.env.AZURE_CLIENT_SECRET,
+    clientId: process.env.AZURE_AD_CLIENT_ID,
+    clientSecret: process.env.AZURE_AD_CLIENT_SECRET,
     scope: 'offline_access User.Read',
-    tenantId: process.env.AZURE_TENANT_ID,
+    tenantId: process.env.AZURE_AD_TENANT_ID,
   }),
 ]
 ...
